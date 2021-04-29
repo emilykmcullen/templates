@@ -6,9 +6,21 @@
 //
 
 #include <iostream>
+#include "Accum.hpp"
+
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    Accum<int> integers(0);
+    integers += 3;
+    integers += 7;
+    std::cout << integers.GetTotal() << std::endl;
+    
+    Accum<std::string> strings("");
+    strings += "Hello ";
+    strings += "world.";
+    std::cout << strings.GetTotal() << std::endl;
+    
+    
     return 0;
 }
